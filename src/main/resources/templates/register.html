@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My ToDo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-neutral-800">
+    <div class="w-screen h-screen flex items-center justify-items-center">
+      <div
+        class="w-6/12 rounded bg-neutral-700 shadow-md mx-auto flex flex-col p-4 items-center justify-items-center"
+      >
+        <h4 class="font-bold font-sans text-lg w-fit text-white">Registrar</h4>
+        <form
+          th:object="${userDTO}"
+          class="w-4/5 my-4 flex flex-col"
+          th:action="@{/new}"
+          method="POST"
+        >
+          <input
+            th:field="*{email}"
+            class="my-2 p-2 rounded-sm font-sans"
+            type="email"
+            placeholder="E-mail"
+          />
+          <div
+            th:errors="*{email}"
+            class="font-sans text-xs font-medium text-red-400"
+          >
+            Error
+          </div>
+          <input
+            th:field="*{password}"
+            class="my-2 p-2 rounded-sm font-sans"
+            type="password"
+            placeholder="Senha"
+          />
+          <div
+            th:errors="*{password}"
+            class="font-sans text-xs font-medium text-red-400"
+          >
+            Error
+          </div>
+          <input
+            th:field="*{confirmPassword}"
+            class="my-2 p-2 rounded-sm font-sans"
+            type="password"
+            placeholder="Confirmar senha"
+          />
+          <div
+            th:errors="*{confirmPassword}"
+            class="font-sans text-xs font-medium text-red-400"
+          >
+            Error
+          </div>
+          <input
+            value="Efetuar cadastro"
+            class="cursor-pointer my-2 text-white p-4 rounded-sm bg-lime-500 hover:bg-lime-600 hover:duration-150 font-semibold font-sans"
+            type="submit"
+          />
+        </form>
+        <p class="text-white font-sans">
+          Já possui uma conta?
+          <a href="/login" class="font-sans text-lime-400 hover:text-lime-500"
+            >Efetuar o login</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
