@@ -62,6 +62,10 @@ public class User implements UserDetails {
   @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
   private List<Todo> todos = new ArrayList<>();
 
+  public UUID getId() {
+    return id;
+  }
+  
   public String getEmail() {
     return email;
   }

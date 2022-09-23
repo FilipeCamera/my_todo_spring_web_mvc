@@ -1,5 +1,8 @@
 package com.mvc.my_todo.services;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +15,12 @@ public class UserService {
   @Autowired
   private UserRepository userRepository;
 
-  public boolean findByEmail(String email) {
+  public Optional<User> findByEmail(String email) {
     return userRepository.findByEmail(email);
+  }
+
+  public User findById(UUID id) {
+    return userRepository.findById(id).get();
   }
 
   public User save(User user) {

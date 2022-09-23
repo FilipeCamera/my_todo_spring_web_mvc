@@ -37,7 +37,7 @@ public class AuthController {
       return "register";
     }
 
-    if(userService.findByEmail(request.getEmail())) {
+    if(userService.findByEmail(request.getEmail()).isPresent()) {
       return "register";
     }
 

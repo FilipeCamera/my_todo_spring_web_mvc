@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My ToDo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div></div>
+  <head th:replace="~{base :: head}"></head>
+  <body class="bg-neutral-800">
+    <header class="w-full flex flex-row items-center justify-items-between p-4">
+      <h3 class="font-bold text-lg text-white">My ToDo</h3>
+      <div class="flex flex-row">
+        <a
+          class="py-2 px-4 font-medium text-white hover:text-gray-300"
+          href="/login"
+          >Login</a
+        >
+        <a
+          class="py-2 px-4 bg-lime-500 rounded font-medium text-white hover:bg-lime-600"
+          href="/register"
+          >Cadastrar-se</a
+        >
+      </div>
+    </header>
+    <div class="flex w-full flex-col p-4">
+      <h1 class="text-white font-bold text-2xl mb-2">
+        Seja bem-vindo ao My ToDo!
+      </h1>
+      <p class="text-white font-medium text-lg">
+        Esse é o seu momento para organizar a sua vida e deixar ela mais
+        produtiva. Com o My ToDo você irá conseguir organizar suas tarefas e
+        acompanhá-las mais de perto. Legal né?
+      </p>
+    </div>
+    <footer class="absolute bottom-0 flex p-4 w-full">
+      <p class="mx-auto text-white">
+        Copyright &copy; 2022 todos direitos reservados
+        <strong class="text-lime-400">My ToDo</strong>
+      </p>
+    </footer>
   </body>
 </html>
